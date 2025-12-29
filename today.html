@@ -46,7 +46,7 @@ function readBible() {
   const text = document.getElementById("bibleText").innerText;
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "ko-KR";
-  utterance.rate = 0.85;   // 어르신 기준 약간 천천히
+  utterance.rate = 0.8;   // 어르신 기준 약간 천천히
   speechSynthesis.cancel();
   speechSynthesis.speak(utterance);
 }
