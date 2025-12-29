@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>1년 성경 통독 - Day 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-size: 22px;
+      line-height: 1.8;
+      padding: 20px;
+      font-family: sans-serif;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    button {
+      font-size: 28px;
+      padding: 22px;
+      width: 100%;
+      margin: 25px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📖 1년 성경 통독</h1>
+<h2>Day 1 – 창세기 1~3장</h2>
+
+<button onclick="readBible()">▶ 말씀 듣기</button>
+
+<p id="bibleText">
+※ 여기에 개역한글 창세기 1~3장 본문을 그대로 붙여 넣으세요
+</p>
+
+<script>
+function readBible() {
+  const text = document.getElementById("bibleText").innerText;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "ko-KR";
+  utterance.rate = 0.9;   // 어르신 기준 약간 천천히
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utterance);
+}
+</script>
+
+</body>
+</html>
